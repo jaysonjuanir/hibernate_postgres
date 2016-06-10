@@ -15,21 +15,22 @@ import java.text.MessageFormat;
  */
 public class Book {
 
-    private String isbn;
+    private int id;
     private String title;
     private String author;
 
     private Book() {
     }
 
-    public Book(String isbn, String title, String author) {
-        this.isbn = isbn;
+    public Book(String title, String author) {
         this.title = title;
         this.author = author;
     }
-
-    public String getIsbn() {
-        return this.isbn;
+	public void setId(int id){
+		this.id = id;
+	}
+    public int getId() {
+        return this.id;
     }
 
     public String getTitle() {
@@ -48,12 +49,9 @@ public class Book {
         this.author = author;
     }
 
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
 
     @Override
     public String toString() {
-        return MessageFormat.format("{0} by {1} (ISBN: {2})", this.title, this.author, this.isbn);
+        return MessageFormat.format("{0} by {1} (ISBN: {2})", this.title, this.author, this.id);
     }
 }

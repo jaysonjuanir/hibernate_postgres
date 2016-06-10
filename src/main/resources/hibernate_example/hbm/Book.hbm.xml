@@ -7,9 +7,11 @@
 
 	<!-- Book-entity mapping -->
     <class name="Book" table="BOOKS">
-        <id name="isbn" type="string"/>
-        <property name="title"/>
-        <property name="author"/>
+        <id name="id" type="int" column="ID">
+      		<generator class="identity"/>
+    	</id>
+        <property name="title" column="TITLE" type="string"/>
+    	<property name="author" column="AUTHOR" type="string"/>
     </class>
 
 </hibernate-mapping>
